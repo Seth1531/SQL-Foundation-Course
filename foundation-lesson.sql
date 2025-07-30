@@ -53,7 +53,19 @@ SELECT
 	, ps.Ward
 	, ps.Tariff
 FROM
-	PatientStay ps;
+	PatientStay ps
+	WHERE ps.Hospital in ('Kingston', 'Pruh')
+	and ps.Ward like '%Surgery'
+	and  ps.AdmittedDate between '2024-02-27' and '2024-03-01'
+	-- and ps.AdmittedDate <= '2024-03-01'
+	order by 
+	ps.AdmittedDate desc, ps.Ward;
+
+	SELECT
+	ps.PatientId
+	,ps.AdmittedDate
+FROM
+	PatientStay ps
 
 /*
 some alternative WHERE clauses.  Try these out
