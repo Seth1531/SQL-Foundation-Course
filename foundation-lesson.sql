@@ -1,4 +1,6 @@
 /*
+This is a change
+
 PatientStay Example - Foundation Course
 Introduction to SQL and the SELECT statement
 */
@@ -19,9 +21,9 @@ Rather than * to select all columns, choose the columns you want
 */
 SELECT
 	PatientId
-	, Tariff
-	, Ward
 	, Hospital
+	, Ward
+	, AdmittedDate
 FROM
 	PatientStay;
 
@@ -32,6 +34,8 @@ Using a table alias (ps in the example below) is good practice and helps in a fe
 */
 SELECT
 	p.PatientId
+	, p.AdmittedDate
+	, p.DischargeDate
 	, p.Ward
 	, p.Tariff
 	, p.Hospital
